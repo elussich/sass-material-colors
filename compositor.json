@@ -1,0 +1,90 @@
+{
+  "name": "elussich/sass-material-colors",
+  "version": "0.1.4",
+  "libraries": {
+    "xv": "^1.1.25"
+  },
+  "title": "Sass Material Colors",
+  "branch": "master",
+  "style": {
+    "name": "Material",
+    "componentSet": {
+      "nav": "nav/DarkAbsoluteNav",
+      "header": "header/GradientHeader",
+      "article": "article/BasicArticle",
+      "footer": "footer/BasicFooter"
+    },
+    "fontFamily": "Roboto, sans-serif",
+    "heading": {
+      "fontWeight": 500,
+      "letterSpacing": "-0.01em"
+    },
+    "colors": {
+      "text": "#212121",
+      "background": "#fff",
+      "primary": "#2196f3",
+      "secondary": "#1565c0",
+      "highlight": "#ff4081",
+      "border": "#e0e0e0",
+      "muted": "#f5f5f5"
+    },
+    "layout": {
+      "centered": true,
+      "bannerHeight": "80vh",
+      "maxWidth": 896
+    }
+  },
+  "content": [
+    {
+      "component": "nav",
+      "links": [
+        {
+          "href": "https://github.com/elussich/sass-material-colors",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://npmjs.com/package/sass-material-colors",
+          "text": "npm"
+        }
+      ]
+    },
+    {
+      "component": "header",
+      "heading": "sass-material-colors",
+      "subhead": "An easy way to use Google's Material Design colors in your Sass/Scss project",
+      "children": [
+        {
+          "component": "ui/TweetButton",
+          "text": "sass-material-colors: An easy way to use Google's Material Design colors in your Sass/Scss project",
+          "url": null
+        },
+        {
+          "component": "ui/GithubButton",
+          "user": "elussich",
+          "repo": "sass-material-colors"
+        }
+      ],
+      "text": "v0.0.5"
+    },
+    {
+      "component": "article",
+      "metadata": {
+        "source": "github.readme"
+      },
+      "html": "<h1>Sass Material Colors <a href=\"http://badge.fury.io/gh/minusfive%2Fsass-material-colors\"><img src=\"https://badge.fury.io/gh/minusfive%2Fsass-material-colors.svg\"></a></h1>\n<p>An easy way to use Google&apos;s <a href=\"http://www.google.com/design/spec/style/color.html#color-color-palette\">Material Design color palette</a> on your Sass project.</p>\n<p><a href=\"http://badge.fury.io/rb/sass-material-colors\"><img src=\"https://badge.fury.io/rb/sass-material-colors.svg\"></a> <a href=\"http://badge.fury.io/bo/sass-material-colors\"><img src=\"https://badge.fury.io/bo/sass-material-colors.svg\"></a> <a href=\"http://badge.fury.io/js/sass-material-colors\"><img src=\"https://badge.fury.io/js/sass-material-colors.svg\"></a></p>\n<h2>Installation</h2>\n<p>Sass Material Colors can be included as a <a href=\"#ruby-gem\">Ruby Gem</a>, a <a href=\"#bower-component\">Bower component</a>, or a <a href=\"#npm\">Node Packaged Module (npm)</a>.</p>\n<h3>Ruby Gem</h3>\n<p>Add this line to your application&apos;s Gemfile:</p>\n<pre>$ gem <span class=\"hljs-string\">&apos;sass-material-colors&apos;</span></pre><p>And then execute:</p>\n<pre>$ bundle</pre><p>Or install it yourself as:</p>\n<pre>$ gem install sass-material-colors</pre><h3>Bower Component</h3>\n<p>Install <code>sass-material-colors</code> as a development dependency:</p>\n<pre>$ bower install --save-dev sass-material-colors</pre><h3>Node Packaged Module (npm)</h3>\n<p>Install <code>sass-material-colors</code> as a development dependency:</p>\n<pre>$ npm install --save-dev sass-material-colors</pre><h2>Usage</h2>\n<p>Import the colors map + function to your project:</p>\n<pre>// Sass\n@import &apos;sass-material-colors&apos;</pre><p>If you&apos;re using Bower or npm, you may need to use the relative path to the main file, e.g.:</p>\n<pre>// Sass\n\n// Bower\n@import &apos;bower_components/sass-material-colors/sass/sass-material-colors&apos;\n\n// npm\n@import &apos;node_modules/sass-material-colors/sass/sass-material-colors&apos;</pre><p>By importing this file, a <code>$material-colors</code> <a href=\"http://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps\">Sass map</a> will be added to your Sass project, with all the colors from Google&apos;s <a href=\"http://www.google.com/design/spec/style/color.html#color-color-palette\">palette</a>, as well as a <a href=\"#the-material-color-function\"><code>material-color</code> function</a>, making it easy for you to reference any color in the spec from your stylesheets.</p>\n<p>Optionally, you can import a list of <a href=\"#predefined-sass-placeholder-selectors\">placeholder selectors</a> and/or <a href=\"#predefined-classes\">classes</a>.</p>\n<h3>The <code>material-color</code> Function</h3>\n<p>The <code>material-color</code> function allows you to easily reference any color in the <code>_sass-material-colors-map.scss</code> file in your styles:</p>\n<pre>// Sass\n.my-cool-element\n  color: material-color(&apos;cyan&apos;, &apos;400&apos;)\n  background: material-color(&apos;blue-grey&apos;, &apos;600&apos;)</pre><p>The <code>material-color</code> function takes 2 parameters:</p>\n<h5><code>$color-name</code> String (quoted), Required</h5>\n<blockquote>\n<p>Lower-case, dasherized color name from Google&apos;s <a href=\"http://www.google.com/design/spec/style/color.html#color-color-palette\">palette</a> (e.g. <code>&apos;pink&apos;</code>, <code>&apos;amber&apos;</code>, <code>&apos;blue-grey&apos;</code>, <code>&apos;deep-orange&apos;</code>, etc.)  </p>\n</blockquote>\n<h5><code>$color-variant</code> String (quoted), Optional [Default value: <code>500</code>]</h5>\n<blockquote>\n<p>Lower-case color variant number/code from Google&apos;s <a href=\"http://www.google.com/design/spec/style/color.html#color-color-palette\">palette</a> (e.g. <code>&apos;300&apos;</code>, <code>&apos;200&apos;</code>, <code>&apos;a100&apos;</code>, <code>&apos;a400&apos;</code>, etc.)</p>\n</blockquote>\n<p>It&apos;s important for these parameters to be quoted strings, in order to maintain compatibility with <a href=\"https://github.com/sass/libsass\">Libsass</a>.</p>\n<h3>Predefined Sass Placeholder Selectors</h3>\n<p>You can include a list of <a href=\"http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend\">extendable</a> Sass <a href=\"http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_\">placeholder selectors</a> in your project by importing the <code>sass-material-colors-placeholders</code> <a href=\"sass/_sass-material-colors-placeholders.scss\">file</a> into your Sass/Scss:</p>\n<pre>// Sass\n@import &apos;sass-material-colors-placeholders&apos;</pre><p>This will add a <code>%color-...</code> and <code>%bg-color-...</code> <a href=\"http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_\">placeholder selector</a> for each color name and variant found in Google&apos;s <a href=\"http://www.google.com/design/spec/style/color.html#color-color-palette\">palette</a> to your project, which you can then extend in your stylesheets like so:</p>\n<pre>// Sass\n.my-cool-element\n  @extend %color-cyan-400\n  @extend %bg-color-blue-grey-600</pre><h3>Predefined Classes</h3>\n<p>You can include a list of predefined classes in your project by importing the <code>sass-material-colors-classes</code> <a href=\"sass/_sass-material-colors-classes.scss\">file</a> into your Sass/Scss:</p>\n<pre>// Sass\n@import &apos;sass-material-colors-classes&apos;</pre><p>This will add a <code>.color-...</code> and <code>.bg-color-...</code> class for each color name and variant found in Google&apos;s <a href=\"http://www.google.com/design/spec/style/color.html#color-color-palette\">palette</a>  to your stylesheets, which you can then use directly in your markup like so:</p>\n<pre><span class=\"hljs-comment\">&lt;!-- HTML --&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">div</span> <span class=\"hljs-attr\">class</span>=<span class=\"hljs-string\">&apos;my-cool-element color-cyan-400 bg-color-blue-grey-600&apos;</span>&gt;</span><span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">div</span>&gt;</span></pre><h2>TO-DO</h2>\n<ul>\n<li>[x] Make it bower friendly</li>\n<li>[x] Make it npm friendly</li>\n<li>[ ] Create ember-cli addon</li>\n<li>[ ] Pre-compile <code>-placeholders</code> and <code>-classes</code> files</li>\n<li>[ ] Separate color (text) and background classes</li>\n<li>[ ] Add tests</li>\n<li>[ ] Add changelog</li>\n</ul>\n<h2>Contributing</h2>\n<p>See <a href=\"CONTRIBUTING.md\">CONTRIBUTING</a>.</p>\n<h2>License</h2>\n<p>See <a href=\"LICENSE.md\">LICENSE</a>.</p>\n<h2>Special Thanks</h2>\n<p>To <a href=\"https://github.com/nilskaspersson/Google-Material-UI-Color-Palette\">nilskaspersson/Google-Material-UI-Color-Palette</a> for the inspiration on using a Sass map for the colors, and a map function to retrieve them.</p>\n<p>To <a href=\"https://github.com/twbs/bootstrap-sass\">twbs/bootstrap-sass</a> as a reference for this gem.</p>\n<p>And to Google for their <a href=\"http://www.google.com/design/spec/material-design/introduction.html\">Material Design spec</a>.</p>\n"
+    },
+    {
+      "component": "footer",
+      "links": [
+        {
+          "href": "https://github.com/elussich/sass-material-colors",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://github.com/elussich",
+          "text": "elussich"
+        }
+      ]
+    }
+  ]
+}
